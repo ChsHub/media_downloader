@@ -12,7 +12,10 @@ def _get_last_tweet_id(html_data: str) -> str:
     :return: Tweet id
     """
     tweet_ids = findall(r'data-tweet-id="([^"]*)', html_data)
-    return tweet_ids[-1]
+    if tweet_ids:
+        return tweet_ids[-1]
+    else:
+        raise ValueError
 
 
 def _get_next_page(user: str, html_last_page: str) -> str:
@@ -50,8 +53,10 @@ def download_twitter(url: str, directory: str = '.'):
 
     while html:
         # Get image urls and save each
-        for image_url in findall(r'data-aria-label-part src="([^"]*)', html):
-            save_file(image_url, user_dir)
-            print(image_url)
+        image_urls = findall(r'data-aria-label-part src="([^"]*)', html)
+        if image_urls:
+            for image_url in image_urls:
+                save_file(image_url, user_dir)
+                print(image_url)
 
-        html = _get_next_page(user, html)
+            html = _get_next_page(user, html)
