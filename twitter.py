@@ -59,4 +59,10 @@ def download_twitter(url: str, directory: str = '.'):
                 save_file(image_url, user_dir)
                 print(image_url)
 
-            html = _get_next_page(user, html)
+
+        html = _get_next_page(user, html)
+        video_urls = findall(r'(<video[^<]*)', html)
+        if video_urls:
+            print(video_urls)
+
+# TODO videos on twitter

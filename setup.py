@@ -16,7 +16,7 @@ setup(
     url="https://github.com/ChsHub/media_downloader",
     packages=['media_downloader'],
     license='MIT License',
-    classifiers=['Programming Language :: Python :: 3']
+    classifiers=['Programming Language :: Python :: 3', 'Topic :: Multimedia']
 )
 # C:\Python37\python.exe setup.py sdist bdist_wheel
 # C:\Python37\python.exe -m twine upload dist/*

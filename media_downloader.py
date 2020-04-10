@@ -4,6 +4,7 @@ from twitter import download_twitter
 
 def _download(url: str, directory: str = '.'):
     directory = directory.strip().strip('"')
+    url = url.strip()
     if not directory:
         directory = '.'
 
