@@ -1,5 +1,5 @@
-from instagram import download_instagram
-from twitter import download_twitter
+from media_downloader.instagram import download_instagram
+from media_downloader.twitter import download_twitter
 
 
 def _download(url: str, directory: str = '.'):
@@ -13,5 +13,10 @@ def _download(url: str, directory: str = '.'):
     if "instagram" in url:
         download_instagram(url, directory)
 
+
 if __name__ == "__main__":
     _download(url=input('User link: '), directory=input('Directory: '))
+
+# TODO fix twitter image resolve
+# TODO twitter video
+# TODO test coverage

@@ -4,7 +4,7 @@ from re import findall
 from urllib.parse import quote
 
 from url_downloader import save_file, get_resource
-from downloader import create_user_dir
+from media_downloader.downloader import create_user_dir
 
 
 def _get_page_data(page_id, end_cursor=""):

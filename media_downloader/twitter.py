@@ -2,7 +2,7 @@ import json
 from re import findall
 
 from url_downloader import get_resource, save_file
-from downloader import create_user_dir
+from media_downloader.downloader import create_user_dir
 
 
 def _get_last_tweet_id(html_data: str) -> str:
